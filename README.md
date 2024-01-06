@@ -1,5 +1,6 @@
 # ASP.NET Core 8 Razor Pages CRUD - .NET 8 Razor Pages CRUD Using Entity Framework Core and SQL Server
-ASP.NET Core 8 Razor Pages CRUD - .NET 8 Razor Pages CRUD Using Entity Framework Core and SQL Server
+
+In this video, we are going to create an ASP.NET Razor Pages CRUD app using Entity Framework Core and SQL Server. We will use the .NET 8 Razor Pages template in Visual Studio 2022 to create this CRUD app.
 
 
 [![Watch the video](https://img.youtube.com/vi/WHFTzo0psng/0.jpg)](https://youtu.be/WHFTzo0psng)
@@ -56,7 +57,7 @@ ASP.NET Core 8 Razor Pages CRUD - .NET 8 Razor Pages CRUD Using Entity Framework
 ## Search  ASP.NET Core
 ## Sporting  ASP.NET Core
 
-In this video, we are going to create an ASP.NET Razor Pages CRUD app using Entity Framework Core and SQL Server. We will use the .NET 8 Razor Pages template in Visual Studio 2022 to create this CRUD app.
+
 
 we are going to create an ASP.NET Razor Pages Full CRUD Operations application using Entity Framework Core Code First approach and SQL Server. 
 
