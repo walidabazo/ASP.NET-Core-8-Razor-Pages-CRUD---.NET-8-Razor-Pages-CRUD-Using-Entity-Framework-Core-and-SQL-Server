@@ -1,0 +1,67 @@
+﻿@page
+@model Product_Tutorial.Pages.Admin.Products.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="text-center">
+   
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductTable.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductTable.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductTable.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductTable.Brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductTable.Category)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductTable.Category)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductTable.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductTable.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductTable.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductTable.Price)
+        </dd>
+        <dt class="col-sm-2">
+    
+          
+        </dt>
+        <dd class="col-sm-10">
+            <img src="/Images/@Model.ProductTable.ImageFileName" width="200" />
+        </dd>
+        <dt class="col-sm-2">
+            Created Date 
+        </dt>
+        <dd class="col-sm-10">
+
+            @Model.ProductTable.CreatedAt.ToString("MM/dd/yyyy")
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ProductTable.Id" />
+        <a class="btn btn-outline-primary" href="/Admin/Products/index" role="button">Back </a>|
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+      
+    </form>
+</div>

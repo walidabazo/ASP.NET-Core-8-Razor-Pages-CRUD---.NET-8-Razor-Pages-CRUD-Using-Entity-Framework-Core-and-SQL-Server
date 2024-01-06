@@ -1,0 +1,84 @@
+﻿@page
+@model Product_Tutorial.Pages.Admin.Products.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded p-3">
+        <h1 class="text-center mb-5">New Product</h1>
+        <form method="post" enctype="multipart/form-data">
+
+          
+            <div class="row mb-3">
+                <label  class="col-sm-4 col-form-label">Name</label>
+                <div class="col-sm-8">
+                 <input asp-for="ProductDto.Name" class="form-control" />
+                    <span asp-validation-for="ProductDto.Name" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Brand</label>
+                <div class="col-sm-8">
+                    <input asp-for="ProductDto.Brand" class="form-control" />
+                    <span asp-validation-for="ProductDto.Brand" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Category</label>
+                <div class="col-sm-8">
+
+                    <span asp-validation-for="ProductDto.Category" class="text-danger"></span>
+                    <select class="form-select" asp-for="ProductDto.Category">
+                        <option value="Other">Other</option>
+                        <option value="Phones">Phones</option>
+                        <option value="Computers">Computers</option>
+                        <option value="Printers">Printers</option>
+                        <option value="Camera">Camera</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Description</label>
+                <div class="col-sm-8">
+                    <textarea  asp-for="ProductDto.Description" class="form-control" ></textarea>
+                    <span asp-validation-for="ProductDto.Description" class="text-danger"></span>
+                </div>
+            </div>
+                <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Price</label>
+                    <div class="col-sm-8">
+                    <input asp-for="ProductDto.Price" class="form-control" />
+                    <span asp-validation-for="ProductDto.Price" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Image</label>
+                    <div class="col-sm-8">
+                        <input asp-for="ProductDto.ImageFileName" class="form-control" />
+                        <span asp-validation-for="ProductDto.ImageFileName" class="text-danger"></span>
+                    </div>
+                </div>
+
+            <div class="row mb-3">
+                <div class="offset-md-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" href="/Admin/Products/index" role="button">Back </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+ 
+</div>
+
+

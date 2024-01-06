@@ -1,0 +1,110 @@
+﻿@page
+@model Product_Tutorial.Pages.Admin.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="card-text md-5">List Of Product</h2>
+
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" href="/Admin/Products/Create">
+            New Product
+        </a>
+
+    </div>
+    <div class="col">
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" name="Search" value="@Model.Search"
+                   placeholder="Search by name or Brand" aria-label="Search" />
+            <button class="btn btn-outline-danger">Search</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    function sortTable(column) {
+        let orderBy = "desc";
+        let currentColumn = "@Model.column";
+        let currentorderBy = "@Model.orderBy";
+
+        if (column == currentColumn) {
+            if (currentorderBy == "asc") { orderBy = "desc"; }
+            else { orderBy = "asc"; }
+
+        }
+        window.location.href = "?search=@(Model.Search)&column=" + column + "&orderBy=" + orderBy;
+    }
+
+</script>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="cursor:pointer" onclick="sortTable('Id')">ID</th>
+            <th style="cursor:pointer" onclick="sortTable('Name')">Name</th>
+            <th style="cursor:pointer" onclick="sortTable('Brand')">Brand</th>
+            <th style="cursor:pointer" onclick="sortTable('Category')">Category</th>
+            <th style="cursor:pointer" onclick="sortTable('Price')">Price</th>
+            <th>Image</th>
+            <th style="cursor:pointer" onclick="sortTable('CreateDate')">Created Date</th>
+            <th>Action </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.products) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+                <td>
+                    @(item.Price)$
+                </td>
+         
+          
+            <td>
+                    <img src="/Images/@item.ImageFileName" width="100" />
+
+            </td>
+            <td>
+                @item.CreatedAt.ToString("MM/dd/yyyy")
+            </td>
+            <td class="white-space:nowrap">
+                    <a class="btn btn-info btn-sm" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-primary btn-sm" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                  
+                    <a class="btn btn-danger btn-sm"  asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+
+    </tbody>
+
+   
+</table>
+<nav>
+    <ul class="pagination">
+
+        @for (int i = 1; i <= Model.totalpage; i++)
+        {
+            string active = "";
+            if (i == Model.pageIndex) active = active;
+            <li class="page-item" @active aria-current="page">
+                <a class="page-link" href="?pageindex=@(i)&Search=@Model.Search&column=@Model.column&orderBy=@Model.orderBy">@i</a>
+            </li>
+
+        }
+    </ul>
+
+</nav>
