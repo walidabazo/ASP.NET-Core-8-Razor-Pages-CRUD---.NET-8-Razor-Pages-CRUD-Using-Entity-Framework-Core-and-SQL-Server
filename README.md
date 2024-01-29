@@ -3,7 +3,7 @@
 In this video, we are going to create an ASP.NET Razor Pages CRUD app using Entity Framework Core and SQL Server. We will use the .NET 8 Razor Pages template in Visual Studio 2022 to create this CRUD app.
 
 
-[![Watch the video](https://img.youtube.com/vi/WHFTzo0psng/0.jpg)](https://youtu.be/WHFTzo0psng)
+[![Watch the video](https://img.youtube.com/vi/UqegTYn2aKE/0.jpg)](https://youtu.be/UqegTYn2aKE)
 
 ## Introduction
 ## Create Project 
